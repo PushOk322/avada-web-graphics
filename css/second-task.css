@@ -1,0 +1,93 @@
+.landscape {
+	position: relative;
+	min-width: 1920px;
+	height: 1000px;
+	overflow: hidden;
+	background: linear-gradient(
+		0deg,
+		#ffffdb 36%,
+		#fbfedb 47.5%,
+		#edfcdd 60.02%,
+		#d8f7df 73.04%,
+		#b9f2e1 86.39%,
+		#92eae5 99.87%,
+		#92eae5 100%
+	);
+}
+
+.landscape__cloud,
+.landscape__sun-wrapper,
+.landscape__sun,
+.landscape__distant-cloud,
+.landscape__landscape {
+	position: absolute;
+}
+
+.landscape__cloud._first {
+	animation: moveCloud 7s linear infinite;
+	top: 50px;
+	left: 0;
+}
+
+.landscape__cloud._second {
+	animation: moveCloud 8s linear infinite;
+	top: 20px;
+	left: 0;
+}
+
+.landscape__cloud._third {
+	animation: moveCloud 5s linear infinite;
+	top: 120px;
+	left: 0;
+}
+
+.landscape__sun-wrapper {
+    transform: translateY();
+	animation: moveSunX 5s linear infinite;
+}
+
+.landscape__sun {
+	animation: moveSunY 5s ease-in-out infinite;
+}
+
+.landscape__distant-cloud {
+	top: 139px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.landscape__landscape {
+	top: 239px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@keyframes moveCloud {
+	0% {
+		transform: translateX(-300px);
+	}
+	100% {
+		transform: translateX(2000px);
+	}
+}
+
+@keyframes moveSunX {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(1200px);
+	}
+}
+
+@keyframes moveSunY {
+	0% {
+		transform: translateY(450px);
+	}
+	50% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(450px);
+	}
+}

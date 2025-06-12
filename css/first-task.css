@@ -1,0 +1,131 @@
+.first-btn {
+	position: relative;
+	border: 1px solid #f9bb18;
+	border-radius: 66px;
+	width: 330px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.first-btn:hover {
+	background-color: #f9bb18;
+	color: #000;
+	cursor: pointer;
+}
+
+.first-btn::before {
+	content: "";
+	position: absolute;
+	top: 66px;
+	width: 100%;
+	height: 2px;
+	transition: 0.3s ease-in-out;
+	transform: scaleX(0);
+	pointer-events: none;
+}
+
+.first-btn:hover::before {
+	transform: scaleX(1);
+	box-shadow: 0 4px 6px -2px #f9b91891;
+	border-radius: 3px;
+	background-color: #f9bb18;
+}
+
+.second-btn {
+	margin-top: 20px;
+	width: fit-content;
+	transition: 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.second-btn:hover {
+	filter: drop-shadow(0px 0px 5px #87cefa)
+		drop-shadow(0px 0px 10px #1eff2980);
+}
+
+.carousel {
+	perspective: 1000px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.cards {
+	display: flex;
+	position: relative;
+	width: 600px;
+	height: 300px;
+}
+
+.card {
+	position: absolute;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+.card--1 {
+	transform: translate(0px,-40px) scale(0.9);
+	z-index: 1;
+}
+.card--2 {
+	transform: translate(220px,0px) scale(1.4);
+	z-index: 2;
+}
+.card--3 {
+	transform: translate(440px,-40px) scale(0.9);
+	z-index: 1;
+}
+
+#card1:checked ~ .cards .card--1 {
+	transform: translate(220px,0px) scale(1.44);
+	z-index: 3;
+	filter: drop-shadow(0px 0px 5px #87cefa)
+		drop-shadow(0px 0px 10px #1eff2980);
+}
+#card1:checked ~ .cards .card--2 {
+	transform: translate(440px,-40px) scale(0.9);
+	z-index: 1;
+}
+#card1:checked ~ .cards .card--3 {
+	transform: translate(0px,-40px) scale(0.9);
+	z-index: 1;
+}
+
+/* When card 2 is selected */
+#card2:checked ~ .cards .card--1 {
+	transform: translate(0px,-40px) scale(0.9);
+}
+#card2:checked ~ .cards .card--2 {
+	transform: translate(220px,0px) scale(1.4);
+	z-index: 3;
+	filter: drop-shadow(0px 0px 5px #87cefa)
+		drop-shadow(0px 0px 10px #1eff2980);
+}
+#card2:checked ~ .cards .card--3 {
+	transform: translate(440px,-40px) scale(0.9);
+}
+
+#card3:checked ~ .cards .card--1 {
+	transform: translate(440px,-40px) scale(0.9);
+}
+#card3:checked ~ .cards .card--2 {
+	transform: translate(0px,-40px) scale(0.9);
+}
+#card3:checked ~ .cards .card--3 {
+	transform: translate(220px,0px) scale(1.4);
+	z-index: 3;
+	filter: drop-shadow(0px 0px 5px #87cefa)
+		drop-shadow(0px 0px 10px #1eff2980);
+}
+
+.card__img {
+	width: 200px;
+	height: 200px;
+}
+
+.carousel__input {
+	display: none;
+}
