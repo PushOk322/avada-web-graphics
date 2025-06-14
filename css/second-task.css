@@ -1,7 +1,8 @@
 .landscape {
 	position: relative;
-	min-width: 1920px;
+	width: 1920px;
 	height: 1000px;
+	max-width: 100%;
 	overflow: hidden;
 	background: linear-gradient(
 		0deg,
@@ -42,12 +43,12 @@
 }
 
 .landscape__sun-wrapper {
-    transform: translateY();
+	transform: translateY();
 	animation: moveSunX 5s linear infinite;
 }
 
 .landscape__sun {
-	animation: moveSunY 5s ease-in-out infinite;
+	animation: moveSunY 5s linear infinite;
 }
 
 .landscape__distant-cloud {
@@ -86,6 +87,9 @@
 	}
 	50% {
 		transform: translateY(50px);
+	}
+	75% {
+		transform: translateY(225px);
 	}
 	100% {
 		transform: translateY(450px);

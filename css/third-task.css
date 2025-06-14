@@ -1,0 +1,74 @@
+#line-outer-wrapper {
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: lineMove 15s linear infinite;
+}
+
+#line-inner-wrapper {
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: lineMove2 15s linear infinite;
+}
+
+svg {
+	width: 700px;
+	height: 700px;
+	display: block;
+	margin: 40px auto;
+	background: #f9f9f9;
+}
+
+.orbit {
+	transform-origin: 340px 340px;
+	animation: orbit 10s linear infinite;
+}
+
+.orbit2 {
+	animation-delay: -3.33s;
+}
+
+.orbit3 {
+	animation-delay: -6.66s;
+}
+
+@keyframes orbit {
+	from {
+		transform: rotate(0deg) translateX(340px);
+	}
+	to {
+		transform: rotate(360deg) translateX(340px);
+	}
+}
+
+.scaling {
+	transform-origin: center;
+	/* animation: scalePulse 3.33s ease-in-out infinite; */
+}
+
+@keyframes scalePulse {
+	0%,
+	100% {
+		transform: scale(0.6);
+	}
+	50% {
+		transform: scale(1.4);
+	}
+}
+
+@keyframes lineMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes lineMove2 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
