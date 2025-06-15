@@ -1,13 +1,18 @@
 .image__wrapper {
-    border: 1px solid blue;
-    perspective: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	border: 1px solid blue;
+	perspective: 1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: ease-out;
+}
+
+.image__wrapper:hover {
+	transform: translateZ(200px);
 }
 
 .image {
-    width: 500px;
-    height: 500px;
-    transform-style: preserve-3d;
+	width: 500px;
+	height: 500px;
+	transform-style: preserve-3d;
 }
