@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title></title>
+        <meta name="description" content="">
+
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/fourth-task.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <a href="/index.html">1</a>
+            <a href="/second-task.html">2</a>
+            <a href="/third-task.html">3</a>
+            <a href="/fourth-task.html">4</a>
+        </div>  
+
+        <div class="image__wrapper">
+            <img src="/assets/starbucks.png" alt="" class="image">             
+        </div>
+
+    </body>
+
+    <script>
+        const wrapper = document.querySelector('.image__wrapper');
+        const image = document.querySelector('.image');
+      
+        wrapper.addEventListener('mousemove', (e) => {
+          const rect = wrapper.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+      
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+      
+          const rotateX = -(y - centerY) / 20;
+          const rotateY = (x - centerX) / 20;
+      
+        //   image.style.transform = `skew(${rotateX}deg, ${rotateY}deg)`;
+          image.style.transform = `translateZ(-200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+      
+        wrapper.addEventListener('mouseleave', () => {
+          image.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+      </script>
+      
+</html>
